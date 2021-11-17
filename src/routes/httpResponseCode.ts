@@ -9,7 +9,10 @@ enum StatusCode {
 }
 
 function sendResponse<T>(res: Response<T>, code: StatusCode, body?: T) {
-  res.status(code).json(body);
+  res.status(code);
+
+  if (body) res.json(body);
+  else res.send();
 }
 
 function sendError(res: Response, code: StatusCode, error?: string) {
