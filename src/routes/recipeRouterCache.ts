@@ -17,13 +17,11 @@ export function cacheRecipeNames(req: Request, res: Response, next: Next) {
   }
 
   console.log("cache miss for recipeNames");
-  const { send } = res;
+  const { json } = res;
 
-  res.send = function (body: any) {
-    if (typeof body !== "string") {
-      cache.set(key, body.recipeNames);
-    }
-    return send.call(res, body);
+  res.json = function (body: any) {
+    cache.set(key, body.recipeNames);
+    return json.call(res, body);
   };
 
   next();
