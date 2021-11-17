@@ -1,12 +1,14 @@
 {
-  "name": "node-http-server",
+  "name": "recipes",
   "version": "1.0.0",
-  "description": "Node.js example server starter project",
+  "description": "Recipes API",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "tsc": "tsc --noEmit",
-    "test": "jest"
+    "check": "tsc --noEmit",
+    "test": "jest",
+    "build": "tsc",
+    "start": "node out/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
