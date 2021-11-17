@@ -18,7 +18,7 @@ function sendError(res: Response, code: StatusCode, error?: string) {
 }
 
 export function noContent(res: Response) {
-  sendResponse(res, StatusCode.NoContent);
+  res.sendStatus(StatusCode.NoContent);
 }
 
 export function badRequest(res: Response, errorMsg?: string) {
