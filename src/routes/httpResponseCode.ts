@@ -17,8 +17,12 @@ function sendError(res: Response, code: StatusCode, error?: string) {
   sendResponse(res, code, { error });
 }
 
+function sendNoResponseBody(res: Response, code: StatusCode) {
+  res.sendStatus(code)
+}
+
 export function noContent(res: Response) {
-  res.sendStatus(StatusCode.NoContent);
+  sendNoResponseBody(res, StatusCode.NoContent)
 }
 
 export function badRequest(res: Response, errorMsg?: string) {
@@ -33,6 +37,6 @@ export function ok<T>(res: Response, body?: T) {
   sendResponse(res, StatusCode.Ok, body);
 }
 
-export function created<T>(res: Response, body?: T) {
-  sendResponse(res, StatusCode.Created, body);
+export function created<T>(res: Response) {
+  sendNoResponseBody(res, StatusCode.Created)
 }

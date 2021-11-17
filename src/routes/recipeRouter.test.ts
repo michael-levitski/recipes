@@ -95,7 +95,7 @@ describe("POST /recipes", () => {
       });
     });
 
-    test("returns no content reponse with code 201", () => {
+    test("returns no response body with code 201", () => {
       expect(response.headers["content-type"]).toBeUndefined();
       expect(response.headers["content-length"]).toBe("0");
       expect(response.body).toEqual({});
