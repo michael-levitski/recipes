@@ -1,3 +1,7 @@
+export interface AppDependencies {
+  repository: RecipeRepository;
+}
+
 export interface Details {
   ingredients: string[];
   numSteps: number;

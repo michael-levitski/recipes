@@ -1,11 +1,11 @@
 import App from "../app";
-import * as repo from "../data/inMemoryRecipeRepo";
+import * as inMemoryRepository from "../repositories/inMemoryRecipeRepo";
 import request, { SuperTest, Test, Response } from "supertest";
 
 let app: SuperTest<Test>;
 
 beforeAll(() => {
-  const expressApp = App(repo);
+  const expressApp = App({repository: inMemoryRepository});
   app = request(expressApp);
 });
 

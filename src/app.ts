@@ -1,9 +1,11 @@
 import express from "express";
 import RecipeRouter from "./routes/recipeRouter";
-import { RecipeRepository } from "./types";
+import { AppDependencies } from "./types";
 
-export default function App(recipeRepository: RecipeRepository) {
+export default function App(dependencies: AppDependencies) {
+  const { repository }= dependencies;
+  
   const app = express();
-  app.use("/recipes", RecipeRouter(recipeRepository));
+  app.use("/recipes", RecipeRouter(repository));
   return app;
 }
