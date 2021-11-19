@@ -14,7 +14,7 @@
     "strict": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noUncheckedIndexedAccess": true,
@@ -23,7 +23,7 @@
     "noFallthroughCasesInSwitch": true,
     "useUnknownInCatchVariables": true,
     "alwaysStrict": true, 
-    "skipLibCheck": true 
+    "skipLibCheck": true
   },
   "exclude": [
     "**/*.test.ts"
