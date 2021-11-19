@@ -1,5 +1,5 @@
-import data from "./data.json";
-import RecipeMap from "./RecipeMap";
+import data from "../data/data.json";
+import RecipeMap from "../data/RecipeMap";
 import { RecipeDetails, Details, Recipe, EmptyObject } from "../types";
 
 const recipeMap = new RecipeMap(data.recipes);
