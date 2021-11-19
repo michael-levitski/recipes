@@ -9,7 +9,10 @@ enum StatusCode {
 }
 
 function sendResponse<T>(res: Response<T>, code: StatusCode, body?: T) {
-  res.status(code).send(body);
+  res.status(code);
+
+  if (body) res.json(body);
+  else res.send();
 }
 
 function sendError(res: Response, code: StatusCode, error?: string) {
@@ -18,7 +21,7 @@ function sendError(res: Response, code: StatusCode, error?: string) {
 }
 
 export function noContent(res: Response) {
-  sendResponse(res, StatusCode.NoContent);
+  sendResponse(res, StatusCode.NoContent)
 }
 
 export function badRequest(res: Response, errorMsg?: string) {
@@ -33,6 +36,6 @@ export function ok<T>(res: Response, body?: T) {
   sendResponse(res, StatusCode.Ok, body);
 }
 
-export function created<T>(res: Response, body?: T) {
-  sendResponse(res, StatusCode.Created, body);
+export function created(res: Response) {
+  sendResponse(res, StatusCode.Created)
 }

@@ -95,7 +95,7 @@ describe("POST /recipes", () => {
       });
     });
 
-    test("returns no content reponse with code 201", () => {
+    test("returns no response body with code 201", () => {
       expect(response.headers["content-type"]).toBeUndefined();
       expect(response.headers["content-length"]).toBe("0");
       expect(response.body).toEqual({});
@@ -124,7 +124,7 @@ describe("POST /recipes", () => {
       });
     });
 
-    test("returns JSON body with error message and 400 status code", async () => {
+    test("returns JSON body with error message and 400 status code", () => {
       expect(response.headers["content-type"].includes("json")).toBe(true);
       expect(response.statusCode).toBe(400);
       expect(response.body).toEqual({
@@ -195,7 +195,7 @@ describe("PUT /recipes", () => {
       });
     });
 
-    test("returns JSON body with error message and 404 status code", async () => {
+    test("returns JSON body with error message and 404 status code", () => {
       expect(response.headers["content-type"].includes("json")).toBe(true);
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({

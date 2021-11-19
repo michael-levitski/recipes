@@ -1,6 +1,7 @@
 import express, { Response } from "express";
 import * as send from "./httpResponseCode";
 import { checkBody, validationResult } from "../validation";
+import { cacheRecipeNames, clearRecipeNamesCache } from "./recipeRouterCache";
 import {
   RecipeRepository,
   Recipe,
@@ -25,7 +26,7 @@ function validateBody(req: Request, res: Response) {
 }
 
 export default function RecipeRouter(recipeRepository: RecipeRepository) {
-  router.get("/", function (_, res) {
+  router.get("/", cacheRecipeNames, function (_, res) {
     const recipeNames = recipeRepository.getRecipeNames();
     send.ok<RecipeNames>(res, { recipeNames });
   });
@@ -44,6 +45,7 @@ export default function RecipeRouter(recipeRepository: RecipeRepository) {
     const success = recipeRepository.insertRecipe(recipe);
     const error = "Recipe already exists";
 
+    clearRecipeNamesCache(success);
     if (success) send.created(res);
     else send.badRequest(res, error);
   });
