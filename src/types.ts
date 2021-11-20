@@ -33,6 +33,7 @@ export interface RecipeRepository {
 
 export interface Env extends NodeJS.ProcessEnv {
   PORT: string;
+  CONNECTION_URI: string;
 }
 
 export interface ErrorResponse {
