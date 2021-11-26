@@ -19,16 +19,32 @@ export interface Recipe {
   instructions: string[];
 }
 
+export interface RecipeAttributes {
+  recipeName?: string;
+  numSteps?: number;
+}
+
+export interface IngredientAttributes {
+  ingredient?: string;
+  recipeName?: string;
+}
+
+export interface InstructionAttributes {
+  instruction: string;
+  stepNumber: number;
+  recipeName: string;
+}
+
 export interface RecipeInfo extends Details {
   instructions: string[];
 }
 
 export interface RecipeRepository {
-  getRecipeNames(): string[];
-  getRecipeDetails(recipeName: string): RecipeDetails | EmptyObject;
-  insertRecipe(recipe: Recipe): boolean;
-  updateRecipe(recipe: Recipe): boolean;
-  deleteRecipe(recipeName: string): boolean;
+  getRecipeNames(): Promise<string[]>;
+  getRecipeDetails(recipeName: string): Promise<RecipeDetails | EmptyObject>;
+  insertRecipe(recipe: Recipe): Promise<boolean>;
+  updateRecipe(recipe: Recipe): Promise<boolean>;
+  // deleteRecipe(recipeName: string): Promise<boolean>;
 }
 
 export interface Env extends NodeJS.ProcessEnv {
