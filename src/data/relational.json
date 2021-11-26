@@ -1,0 +1,138 @@
+{
+  "recipes": [
+    {
+      "recipeName": "scrambledEggs",
+      "numSteps": 5
+    },
+    {
+      "recipeName": "garlicPasta",
+      "numSteps": 5
+    },
+    {
+      "recipeName": "chai",
+      "numSteps": 4
+    }
+  ],
+  "ingredients": [
+    {
+      "ingredient": "1 tsp oil",
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "ingredient": "2 eggs",
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "ingredient": "salt",
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "ingredient": "500mL water",
+      "recipeName": "garlicPasta"
+    },
+    {
+      "ingredient": "100g spaghetti",
+      "recipeName": "garlicPasta"
+    },
+    {
+      "ingredient": "25mL olive oil",
+      "recipeName": "garlicPasta"
+    },
+    {
+      "ingredient": "4 cloves garlic",
+      "recipeName": "garlicPasta"
+    },
+    {
+      "ingredient": "Salt",
+      "recipeName": "garlicPasta"
+    },
+    {
+      "ingredient": "400mL water",
+      "recipeName": "chai"
+    },
+    {
+      "ingredient": "100mL milk",
+      "recipeName": "chai"
+    },
+    {
+      "ingredient": "5g chai masala",
+      "recipeName": "chai"
+    },
+    {
+      "ingredient": "2 tea bags or 20 g loose tea leaves",
+      "recipeName": "chai"
+    }
+  ],
+  "instructions": [
+    {
+      "instruction": "Beat eggs with salt",
+      "stepNumber": 1,
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "instruction": "Heat oil in pan",
+      "stepNumber": 2,
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "instruction": "Add eggs to pan when hot",
+      "stepNumber": 3,
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "instruction": "Gather eggs into curds, remove when cooked",
+      "stepNumber": 4,
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "instruction": "Salt to taste and enjoy",
+      "stepNumber": 5,
+      "recipeName": "scrambledEggs"
+    },
+    {
+      "instruction": "Heat garlic in olive oil",
+      "stepNumber": 1,
+      "recipeName": "garlicPasta"
+    },
+    {
+      "instruction": "Boil water in pot",
+      "stepNumber": 2,
+      "recipeName": "garlicPasta"
+    },
+    {
+      "instruction": "Add pasta to boiling water",
+      "stepNumber": 3,
+      "recipeName": "garlicPasta"
+    },
+    {
+      "instruction": "Remove pasta from water and mix with garlic olive oil",
+      "stepNumber": 4,
+      "recipeName": "garlicPasta"
+    },
+    {
+      "instruction": "Salt to taste and enjoy",
+      "stepNumber": 5,
+      "recipeName": "garlicPasta"
+    },
+    {
+      "instruction": "Heat water until 80 C",
+      "stepNumber": 1,
+      "recipeName": "chai"
+    },
+    {
+      "instruction": "Add milk, heat until 80 C",
+      "stepNumber": 2,
+      "recipeName": "chai"
+    },
+    {
+      "instruction": "Add tea leaves/tea bags, chai masala; mix and steep for 3-4 minutes",
+      "stepNumber": 3,
+      "recipeName": "chai"
+    },
+    {
+      "instruction": "Remove mixture from heat; strain and enjoy",
+      "stepNumber": 4,
+      "recipeName": "chai"
+    }
+  ]
+}
