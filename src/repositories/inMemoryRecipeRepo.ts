@@ -4,11 +4,13 @@ import { RecipeDetails, Details, Recipe, EmptyObject } from "../types";
 
 const recipeMap = new RecipeMap(data.recipes);
 
-export function getRecipeNames() {
+export async function getRecipeNames() {
   return recipeMap.recipeNames;
 }
 
-function _getRecipeDetails(recipeName: string): RecipeDetails | EmptyObject {
+async function _getRecipeDetails(
+  recipeName: string
+): Promise<RecipeDetails | EmptyObject> {
   const recipe = recipeMap.getInfo(recipeName);
 
   if (!recipe) return {};
@@ -17,14 +19,14 @@ function _getRecipeDetails(recipeName: string): RecipeDetails | EmptyObject {
 
   const details: Details = {
     ingredients,
-    numSteps
+    numSteps,
   };
 
   return { details };
 }
 export const getRecipeDetails = _getRecipeDetails;
 
-function setRecipe(recipe: Recipe, setIfContains: boolean) {
+async function setRecipe(recipe: Recipe, setIfContains: boolean) {
   const mapHasRecipe = recipeMap.has(recipe);
 
   if (mapHasRecipe !== setIfContains) return false;
@@ -34,14 +36,14 @@ function setRecipe(recipe: Recipe, setIfContains: boolean) {
   return true;
 }
 
-export function insertRecipe(recipe: Recipe) {
+export async function insertRecipe(recipe: Recipe) {
   return setRecipe(recipe, false);
 }
 
-export function updateRecipe(recipe: Recipe) {
+export async function updateRecipe(recipe: Recipe) {
   return setRecipe(recipe, true);
 }
 
-export function deleteRecipe(recipeName: string) {
+export async function deleteRecipe(recipeName: string) {
   return recipeMap.delete(recipeName);
 }
